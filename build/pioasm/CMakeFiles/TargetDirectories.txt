@@ -1,0 +1,3 @@
+/home/ingram/code/pico/led-fun/build/pioasm/CMakeFiles/rebuild_cache.dir
+/home/ingram/code/pico/led-fun/build/pioasm/CMakeFiles/edit_cache.dir
+/home/ingram/code/pico/led-fun/build/pioasm/CMakeFiles/pioasm.dir

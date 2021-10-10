@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/ingram/code/pico/led-fun/build/rainbows/CMakeFiles/PioasmBuild"
+		},
+		{
+			"file" : "/home/ingram/code/pico/led-fun/build/rainbows/CMakeFiles/PioasmBuild.rule"
+		},
+		{
+			"file" : "/home/ingram/code/pico/led-fun/build/rainbows/CMakeFiles/PioasmBuild-complete.rule"
+		},
+		{
+			"file" : "/home/ingram/code/pico/led-fun/build/rainbows/pioasm/src/PioasmBuild-stamp/PioasmBuild-install.rule"
+		},
+		{
+			"file" : "/home/ingram/code/pico/led-fun/build/rainbows/pioasm/src/PioasmBuild-stamp/PioasmBuild-mkdir.rule"
+		},
+		{
+			"file" : "/home/ingram/code/pico/led-fun/build/rainbows/pioasm/src/PioasmBuild-stamp/PioasmBuild-download.rule"
+		},
+		{
+			"file" : "/home/ingram/code/pico/led-fun/build/rainbows/pioasm/src/PioasmBuild-stamp/PioasmBuild-update.rule"
+		},
+		{
+			"file" : "/home/ingram/code/pico/led-fun/build/rainbows/pioasm/src/PioasmBuild-stamp/PioasmBuild-patch.rule"
+		},
+		{
+			"file" : "/home/ingram/code/pico/led-fun/build/rainbows/pioasm/src/PioasmBuild-stamp/PioasmBuild-configure.rule"
+		},
+		{
+			"file" : "/home/ingram/code/pico/led-fun/build/rainbows/pioasm/src/PioasmBuild-stamp/PioasmBuild-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"PioasmBuild"
+		],
+		"name" : "PioasmBuild"
+	}
+}

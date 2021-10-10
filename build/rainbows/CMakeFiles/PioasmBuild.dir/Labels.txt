@@ -1,0 +1,13 @@
+# Target labels
+ PioasmBuild
+# Source files and their labels
+/home/ingram/code/pico/led-fun/build/rainbows/CMakeFiles/PioasmBuild
+/home/ingram/code/pico/led-fun/build/rainbows/CMakeFiles/PioasmBuild.rule
+/home/ingram/code/pico/led-fun/build/rainbows/CMakeFiles/PioasmBuild-complete.rule
+/home/ingram/code/pico/led-fun/build/rainbows/pioasm/src/PioasmBuild-stamp/PioasmBuild-install.rule
+/home/ingram/code/pico/led-fun/build/rainbows/pioasm/src/PioasmBuild-stamp/PioasmBuild-mkdir.rule
+/home/ingram/code/pico/led-fun/build/rainbows/pioasm/src/PioasmBuild-stamp/PioasmBuild-download.rule
+/home/ingram/code/pico/led-fun/build/rainbows/pioasm/src/PioasmBuild-stamp/PioasmBuild-update.rule
+/home/ingram/code/pico/led-fun/build/rainbows/pioasm/src/PioasmBuild-stamp/PioasmBuild-patch.rule
+/home/ingram/code/pico/led-fun/build/rainbows/pioasm/src/PioasmBuild-stamp/PioasmBuild-configure.rule
+/home/ingram/code/pico/led-fun/build/rainbows/pioasm/src/PioasmBuild-stamp/PioasmBuild-build.rule

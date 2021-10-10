@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "led_ring_dots.h": "c",
+        "numbers.h": "c",
+        "led_matrix.h": "c"
+    }
+}
