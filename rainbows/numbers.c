@@ -92,3 +92,25 @@ void write_number_three(int origin_x, int origin_y, Colour colour)
         memcpy(image[origin_x + i], three[i], sizeof(three[i]));
     }
 }
+
+void write_number_four(int origin_x, int origin_y, Colour colour)
+{
+    int four[NUMBER_ROW_SIZE][NUMBER_COLUMN_SIZE] = FOUR;
+
+    uint32_t c = ((uint32_t) (colour.red) << 8) |
+            ((uint32_t) (colour.green) << 16) |
+            (uint32_t) (colour.blue);
+
+    for(int i = 0; i < NUMBER_ROW_SIZE; i++)
+    {
+        for(int j = 0; j < NUMBER_COLUMN_SIZE; j++)
+        {
+            four[i][j] *= c;
+        }
+    }
+
+    for(int i = 0; i < NUMBER_ROW_SIZE; i++)
+    {
+        memcpy(image[origin_x + i], four[i], sizeof(four[i]));
+    }
+}

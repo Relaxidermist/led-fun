@@ -15,7 +15,8 @@
 #include "led_matrix.h"
 #include "numbers.h"
 
-extern uint32_t flattened_data[];
+uint32_t flattened_data[];
+uint32_t image[ROWS_IMAGE][COLUMNS_IMAGE];
 
 int mode_number = 0;
 
@@ -45,8 +46,9 @@ const struct {
     mode mod;
     const char *name;
 } pattern_table[] = {
-        {test_image_horizontal,  "Horizontal"},
+        //{test_image_horizontal,  "Horizontal"},
         {test_image_vertical,  "Vertical"},
+        //{image_from_uart, "UART"},
 };
 
 bool change_mode() 
@@ -78,8 +80,8 @@ int main() {
     add_repeating_timer_ms(5000, change_mode, NULL, &timer);
 
     while (1) {
-        //pattern_table[mode_number].mod();
-        write_number_two(0, 0, number_colour);
+        pattern_table[mode_number].mod();
+        //write_number_four(0, 0, number_colour);
         prepare_data_for_screen();
         write_panel();
         sleep_ms(1);

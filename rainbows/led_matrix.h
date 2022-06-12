@@ -46,5 +46,6 @@ void prepare_data_for_panel();
 void prepare_data_for_panel2(int panel);
 void prepare_data_for_screen();
 void squares_image();
+void image_from_uart();
 
 #endif

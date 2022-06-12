@@ -1,5 +1,18 @@
 #include "pico/stdlib.h"
 #include "led_matrix.h"
+#include "hardware/uart.h"
+
+#define UART_ID uart1
+#define BAUD_RATE 115200
+#define DATA_BITS 8
+#define STOP_BITS 1
+#define PARITY    UART_PARITY_NONE
+
+// We are using pins 0 and 1, but see the GPIO function select table in the
+// datasheet for information on which other pins can be used.
+#define UART_TX_PIN 4
+#define UART_RX_PIN 5
+
 
 uint32_t image[ROWS_IMAGE][COLUMNS_IMAGE];
 uint32_t flattened_data[ROWS_IMAGE * COLUMNS_IMAGE];
@@ -14,6 +27,55 @@ void init_blank_image()
             image[i][j] = 0;
         }
     }
+}
+
+void image_from_uart()
+{
+    static bool initialized = false;
+
+        // Set up our UART with the required speed.
+    if(!initialized){
+        
+        uart_init(UART_ID, BAUD_RATE);
+
+        // Set the TX and RX pins by using the function select on the GPIO
+        // Set datasheet for more information on function select
+        gpio_set_function(UART_TX_PIN, GPIO_FUNC_UART);
+        gpio_set_function(UART_RX_PIN, GPIO_FUNC_UART);
+
+        // Turn off FIFO's - we want to do this character by character
+        // uart fifo is 16 bytes deep
+        uart_set_fifo_enabled(UART_ID, false);
+
+        initialized = true;
+    }
+    static Colour pixel;
+    static uint8_t read_buffer[ROWS_IMAGE * COLUMNS_IMAGE * 3];
+    uart_read_blocking(UART_ID, read_buffer, sizeof(read_buffer) - 1);
+
+    int j = 0;
+    int k = 0;
+
+    for(int i = 0; i < sizeof(read_buffer); i+=3)
+    {
+        pixel.red = read_buffer[i];
+        pixel.green = read_buffer[i + 1];
+        pixel.blue = read_buffer[i + 2];
+
+        image[j][k] =  (uint32_t)((pixel.green) << 16) |
+                        (uint32_t)((pixel.red) << 8) |
+                        (uint32_t)((pixel.blue));
+
+        j++;
+
+        if((j % ROWS_IMAGE) == 0){
+            k++;
+        }
+
+
+    }
+           
+    
 }
 
 
